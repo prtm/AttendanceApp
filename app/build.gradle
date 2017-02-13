@@ -5,7 +5,7 @@ android {
     buildToolsVersion "25.0.2"
     defaultConfig {
         applicationId "jecrc.prtm.attendanceapp"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0"
@@ -31,5 +31,7 @@ dependencies {
     compile 'dev.dworks.libs:volleyplus:0.1.4'
     compile 'de.hdodenhof:circleimageview:2.1.0'
     compile 'de.greenrobot:eventbus:3.0.0-beta1'
+    compile 'com.firebaseui:firebase-ui:1.1.1'
     testCompile 'junit:junit:4.12'
 }
+apply plugin: 'com.google.gms.google-services'

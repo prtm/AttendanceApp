@@ -19,14 +19,11 @@ import android.widget.TextView;
 import fragments.Att_view_Fragment;
 import interfaces.Att_status_change;
 
-import static java.lang.Thread.sleep;
-
 public class Att_pager extends AppCompatActivity implements Att_status_change {
     public static int length = 0;
     private int position = 0;
     ViewPager vpPager;
     private boolean[] status;
-    private FragmentStatePagerAdapter adapterViewPager;
     private ImageView Imgstatus;
     private String classId = "", subId = "";
     private TextView checkedStatus;
@@ -55,7 +52,7 @@ public class Att_pager extends AppCompatActivity implements Att_status_change {
             }
         });
 
-        adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
+        FragmentStatePagerAdapter adapterViewPager = new MyPagerAdapter(getSupportFragmentManager());
         Imgstatus.setImageResource(R.drawable.cancel);
         checkedStatus.setText(getResources().getString(R.string.absent));
         vpPager.setAdapter(adapterViewPager);
