@@ -69,7 +69,7 @@ public class Att_pager extends AppCompatActivity implements Att_status_change {
                 if (position == length - 1) {
                     fab.setVisibility(View.VISIBLE);
                 } else {
-                    fab.setVisibility(View.GONE);
+                    fab.setVisibility(View.INVISIBLE);
                 }
                 Att_pager.this.position = position;
                 if (Att_pager.this.status[position]) {
