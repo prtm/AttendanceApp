@@ -89,11 +89,11 @@ public class SubjectView extends AppCompatActivity implements Sub_Info {
         queue.add(request);
     }
 
-    private void nextScreen(String x) {
+    private void nextScreen(String subId) {
         if (success) {
-            Intent intent = new Intent(SubjectView.this, Att_start.class);
+            Intent intent = new Intent(SubjectView.this, Att_view_sel.class);
             Bundle bundle = new Bundle();
-            bundle.putString("classSubId", classId + "," + x);
+            bundle.putString("classSubId", classId + "," + subId);
             intent.putExtras(bundle);
             startActivity(intent);
 

@@ -12,11 +12,19 @@ import adapters.Att_adapter;
 
 public class Att_start extends AppCompatActivity {
     public static List<DownloadStudent> listStudent;
-
+    private String classId="", subId="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_taking);
+        try {
+            String classSubId[] = getIntent().getExtras().getString("classSubId").split(",");
+            classId=classSubId[0];
+            subId=classSubId[1];
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
+
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_attendance);
         Att_adapter attendanceAdapter = new Att_adapter(this, listStudent);
         recyclerView.setAdapter(attendanceAdapter);

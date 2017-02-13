@@ -30,6 +30,6 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.0.0-beta4'
     compile 'dev.dworks.libs:volleyplus:0.1.4'
     compile 'de.hdodenhof:circleimageview:2.1.0'
-    testCompile 'junit:junit:4.12'
     compile 'de.greenrobot:eventbus:3.0.0-beta1'
+    testCompile 'junit:junit:4.12'
 }

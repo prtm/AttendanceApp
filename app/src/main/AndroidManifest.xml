@@ -14,26 +14,21 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".DashBoard" />
-
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-
             </intent-filter>
         </activity>
         <activity android:name=".ClassView" />
-        <activity android:name=".Att_start">
-
-        </activity>
-        <activity android:name=".Att_pager">
-
-        </activity>
+        <activity android:name=".Att_start"></activity>
+        <activity android:name=".Att_pager"></activity>
 
         <service android:name=".download_upload.DownloadService" />
 
         <activity android:name=".SubjectView" />
+        <activity android:name=".Att_view_sel"></activity>
     </application>
 
 </manifest>

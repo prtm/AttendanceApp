@@ -19,15 +19,19 @@ public class Att_pager extends AppCompatActivity implements Att_status_change {
     ViewPager vpPager;
     private boolean[] status;
     private ImageView Imgstatus;
-    private String classId, subId;
+    private String classId="", subId="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendance_pager);
-        String a[] = getIntent().getExtras().getString("classSubId").split(",");
-        classId = a[0];
-        subId = a[1];
+        try {
+            String classSubId[] = getIntent().getExtras().getString("classSubId").split(",");
+            classId = classSubId[0];
+            subId = classSubId[1];
+        } catch (NullPointerException e) {
+            e.printStackTrace();
+        }
         vpPager = (ViewPager) findViewById(R.id.vpPager);
         Imgstatus = (ImageView) findViewById(R.id.status);
 
@@ -106,7 +110,7 @@ public class Att_pager extends AppCompatActivity implements Att_status_change {
     private static class MyPagerAdapter extends FragmentStatePagerAdapter {
         private static int NUM_ITEMS;
 
-        public MyPagerAdapter(FragmentManager fragmentManager) {
+        MyPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
             NUM_ITEMS = length;
             L.lm(NUM_ITEMS + " length ");
