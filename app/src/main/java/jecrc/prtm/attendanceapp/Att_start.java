@@ -13,11 +13,13 @@ import adapters.Att_adapter;
 public class Att_start extends AppCompatActivity {
     public static List<DownloadStudent> listStudent;
     private String classId="", subId="";
+    boolean majority=false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_taking);
         try {
+            majority = getIntent().getExtras().getBoolean("majority");
             String classSubId[] = getIntent().getExtras().getString("classSubId").split(",");
             classId=classSubId[0];
             subId=classSubId[1];
@@ -26,7 +28,7 @@ public class Att_start extends AppCompatActivity {
         }
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_attendance);
-        Att_adapter attendanceAdapter = new Att_adapter(this, listStudent);
+        Att_adapter attendanceAdapter = new Att_adapter(this, listStudent,majority);
         recyclerView.setAdapter(attendanceAdapter);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
 

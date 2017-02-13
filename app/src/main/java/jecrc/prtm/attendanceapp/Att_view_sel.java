@@ -21,17 +21,12 @@ public class Att_view_sel extends AppCompatActivity {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        TextDrawable drawable = TextDrawable.builder().beginConfig().width(72).height(72).endConfig()
-                .buildRound("PRESENT", Color.RED);
-        TextDrawable drawable2 = TextDrawable.builder().beginConfig().width(72).height(72).endConfig()
-                .buildRound("ABSENT", Color.GREEN);
+        TextDrawable drawable = TextDrawable.builder().beginConfig().width(144).height(144).textColor(Color.BLACK).fontSize(18).endConfig()
+                .buildRound("PRESENT", Color.YELLOW);
+        TextDrawable drawable2 = TextDrawable.builder().beginConfig().width(144).height(144).textColor(Color.WHITE).fontSize(18).endConfig()
+                .buildRound("ABSENT", Color.BLACK);
 
-        //Intialization
 
-        ImageView presentImg = (ImageView) findViewById(R.id.present);
-        ImageView absentImg = (ImageView) findViewById(R.id.absent);
-        presentImg.setImageDrawable(drawable);
-        absentImg.setImageDrawable(drawable2);
         //if about half class present, go to class attendance pager
         findViewById(R.id.equal).setOnClickListener(new View.OnClickListener() {
             @Override

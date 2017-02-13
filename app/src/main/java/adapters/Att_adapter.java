@@ -14,7 +14,6 @@ import com.amulyakhare.textdrawable.util.ColorGenerator;
 import java.util.Collections;
 import java.util.List;
 
-import jecrc.prtm.attendanceapp.Att_start;
 import jecrc.prtm.attendanceapp.DownloadStudent;
 import jecrc.prtm.attendanceapp.R;
 
@@ -28,12 +27,12 @@ public class Att_adapter extends RecyclerView.Adapter<Att_adapter.MyAdapter> {
     private static final float imageA = 0.4f;
     private static final float imageB = 1f;
 
-    public Att_adapter(Context context, List<DownloadStudent> ls) {
+    public Att_adapter(Context context, List<DownloadStudent> ls, boolean majority) {
         this.ls = ls;
         inflater = LayoutInflater.from(context);
         check = new boolean[ls.size()];
         for (int i = 0; i < check.length; i++) {
-            check[i] = false;
+            check[i] = majority;
         }
     }
 

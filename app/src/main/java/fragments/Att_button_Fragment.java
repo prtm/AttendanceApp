@@ -11,18 +11,19 @@ import interfaces.Att_status_change;
 import jecrc.prtm.attendanceapp.R;
 
 
-public class ButtonFragment extends Fragment {
+public class Att_button_Fragment extends Fragment {
     private Att_status_change comm;
 
-    public ButtonFragment() {
+    public Att_button_Fragment() {
 
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_button, container, false);
+        View view = inflater.inflate(R.layout.fragment_att_button, container, false);
         comm = (Att_status_change) getActivity();
+
         //final EventBus bus = EventBus.getDefault();
 
 //        commonF= (ButtonF_to_CommonF) getActivity();

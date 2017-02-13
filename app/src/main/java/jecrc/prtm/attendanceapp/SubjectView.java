@@ -18,6 +18,7 @@ import com.android.volley.toolbox.Volley;
 import java.util.List;
 
 import adapters.Sub_adapter;
+import fragments.Att_view_Fragment;
 import interfaces.Sub_Info;
 import parser.JsonParser_Student;
 
@@ -56,16 +57,9 @@ public class SubjectView extends AppCompatActivity implements Sub_Info {
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
                         } else {
-                            /* CommonFragment.listStudent = JsonParser_Student.parseFeed(response);
-                            if (CommonFragment.listStudent == null) {
-                                L.lm("null error");
-                                success = false;
-                            } else {
-                                L.lm(CommonFragment.listStudent.size() + "");
-                                Att_pager.length = CommonFragment.listStudent.size();
-                                success = true;
-                            } */
-                            Att_start.listStudent = JsonParser_Student.parseFeed(response);
+
+                            Att_view_Fragment.listStudent = Att_start.listStudent = JsonParser_Student.parseFeed(response);
+
                             if (Att_start.listStudent == null) {
                                 L.lm("null error");
                                 success = false;
