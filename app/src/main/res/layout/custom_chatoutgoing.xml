@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e5e5e5"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:background="?attr/message_received"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textOutgoing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hello world this preetam"
+            android:textColor="@android:color/black" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/ll"
+        android:background="?attr/message_sent"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/textOutgoing2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="oh i preetam"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -20,11 +20,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".DashBoard" />
         <activity android:name=".LoginActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ClassView" />
         <activity android:name=".Att_start" />
@@ -34,6 +30,13 @@
 
         <activity android:name=".SubjectView" />
         <activity android:name=".Att_view_sel" />
+        <activity android:name=".Test">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

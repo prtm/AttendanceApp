@@ -6,6 +6,10 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
+        <!--for chatting-->
+        <item name="attr/message_sent">@drawable/message_sent</item>
+        <item name="attr/message_received">@drawable/message_received</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

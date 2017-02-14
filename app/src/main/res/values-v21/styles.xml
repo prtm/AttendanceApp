@@ -5,5 +5,7 @@
         <item name="windowNoTitle">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="attr/message_sent">@drawable/message_sent</item>
+        <item name="attr/message_received">@drawable/message_received</item>
     </style>
 </resources>
