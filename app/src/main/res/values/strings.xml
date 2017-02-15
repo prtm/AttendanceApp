@@ -21,4 +21,10 @@
     <string name="present">Present</string>
     <string name="absent">absent</string>
     <string name="attendance_status">Attendance Status</string>
+    <string name="imagesent">Image Sent</string>
+    <string name="image_received">Image Received</string>
+    <string name="title_activity_chat">ChatActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
 </resources>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="Theme">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@android:color/black"
+                android:title="Light" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@android:color/white"
+                android:title="Dark" />
+
+            <item
+                android:id="@+id/nav_camera"
+                android:icon="@android:color/holo_green_dark"
+                android:title="Solarized" />
+        </menu>
+    </item>
+
+</menu>
