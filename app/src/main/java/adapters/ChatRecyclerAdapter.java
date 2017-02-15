@@ -79,8 +79,8 @@ public class ChatRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
         if (tsent != null) {
             if (tsent.isMsg()) {
                 vh1.label1.setText(tsent.getMessage());
-                vh1.img.setVisibility(View.GONE);
-                vh1.label1.setVisibility(View.VISIBLE);
+                //vh1.img.setVisibility(View.GONE);
+                //vh1.label1.setVisibility(View.VISIBLE);
             } else {
                 vh1.img.setVisibility(View.VISIBLE);
                 vh1.label1.setVisibility(View.GONE);
@@ -90,15 +90,17 @@ public class ChatRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     private void configureViewHolder2(ViewHolderReceive vh2, int position) {
-        Tsent treceive = (Tsent) items.get(position);
-        if (treceive.isMsg()) {
-            vh2.label1.setText(treceive.getMessage());
-            vh2.img.setVisibility(View.GONE);
-            vh2.label1.setVisibility(View.VISIBLE);
-        } else {
-            vh2.img.setVisibility(View.VISIBLE);
-            vh2.label1.setVisibility(View.GONE);
-            vh2.img.setImageBitmap((Bitmap) items.get(position));
+        Treceived treceive = (Treceived) items.get(position);
+        if (treceive != null) {
+            if (treceive.isMsg()) {
+                vh2.label1.setText(treceive.getMessage());
+                //vh2.img.setVisibility(View.GONE);
+                //vh2.label1.setVisibility(View.VISIBLE);
+            } else {
+                vh2.img.setImageBitmap((Bitmap) items.get(position));
+                vh2.img.setVisibility(View.VISIBLE);
+                vh2.label1.setVisibility(View.GONE);
+            }
         }
     }
 
@@ -110,9 +112,9 @@ public class ChatRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     @Override
     public int getItemViewType(int position) {
         if (items.get(position) instanceof Treceived) {
-            return sent;
-        } else if (items.get(position) instanceof Tsent) {
             return received;
+        } else if (items.get(position) instanceof Tsent) {
+            return sent;
         }
         return -1;
     }

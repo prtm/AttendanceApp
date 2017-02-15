@@ -8,7 +8,7 @@ import android.media.Image;
  */
 
 public class Treceived {
-    private boolean msg;
+    private boolean msg=true;
     private String message;
     private Bitmap bitmap;
 

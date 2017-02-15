@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/llContainer"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="?attr/message_received"
+    android:layout_marginBottom="4dp"
     android:orientation="vertical"
     android:padding="16dp">
+
 
     <TextView
         android:id="@+id/textincoming"
         android:layout_width="wrap_content"
+        android:maxWidth="200dp"
         android:layout_height="wrap_content"
         android:textColor="@android:color/black" />
 
@@ -17,6 +20,6 @@
         android:id="@+id/textimgSent"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:visibility="gone"
-        android:contentDescription="@string/imagesent" />
+        android:contentDescription="@string/imagesent"
+        android:visibility="gone" />
 </LinearLayout>

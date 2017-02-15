@@ -1,22 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Theme">
-        <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@android:color/black"
-                android:title="Light" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@android:color/white"
-                android:title="Dark" />
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_share"
+            android:icon="@android:drawable/alert_light_frame"
+            android:title="Light" />
+        <item
+            android:id="@+id/nav_send"
+            android:icon="@android:drawable/alert_dark_frame"
+            android:title="Dark" />
 
-            <item
-                android:id="@+id/nav_camera"
-                android:icon="@android:color/holo_green_dark"
-                android:title="Solarized" />
-        </menu>
-    </item>
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@android:drawable/arrow_down_float"
+            android:title="Solarized" />
+
+    </group>
 
 </menu>

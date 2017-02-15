@@ -7,7 +7,7 @@ import android.graphics.Bitmap;
  */
 
 public class Tsent {
-    private boolean msg;
+    private boolean msg=true;
     private String message;
     private Bitmap bitmap;
 

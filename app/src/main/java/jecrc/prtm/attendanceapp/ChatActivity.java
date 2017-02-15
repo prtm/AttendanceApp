@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -15,10 +16,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import adapters.ChatRecyclerAdapter;
+
 public class ChatActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private RecyclerView recyclerView;
     private static final String FIREBASE_URL = "https://android-chat.firebaseio-demo.com";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +50,33 @@ public class ChatActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setAdapter(new ChatRecyclerAdapter(getList()));
 
 
+    }
+
+    private List<Object> getList() {
+        List<Object> object = new ArrayList<>();
+        object.add(new Treceived("I there how are you dajfkldsjfa fkadjflkadjflkadsjf aldkfjalkdsfj asdfjaksdlf"));
+        object.add(new Tsent("I am fine how r u? akfjasdfja ksdlfjadl fja;ldkfjakdfjalkdfkjaklfjalfjlaksdf jalsd"));
+        object.add(new Treceived("full of surprise"));
+        object.add(new Treceived("I there how are you"));
+        object.add(new Tsent("I am fine how r u?"));
+        object.add(new Treceived("full of surprise"));
+        object.add(new Treceived("I there how are you"));
+        object.add(new Tsent("I am fine how r u?"));
+        object.add(new Treceived("full of surprise"));
+        object.add(new Treceived("I there how are you"));
+        object.add(new Tsent("I am fine how r u?"));
+        object.add(new Treceived("full of surprise"));
+        object.add(new Treceived("I there how are you"));
+        object.add(new Tsent("I am fine how r u?"));
+        object.add(new Treceived("full of surprise"));
+        object.add(new Treceived("I there how are you"));
+        object.add(new Tsent("I am fine how r u?"));
+        object.add(new Treceived("full of surprise"));
+        return object;
     }
 
     @Override

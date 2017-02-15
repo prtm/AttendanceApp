@@ -11,4 +11,5 @@
     <color name="lightBlue">#2b3862</color>
     <color name="darkBlue">#162345</color>
     <color name="teal">#098</color>
+    <color name="greyBack">#e5e5e5</color>
 </resources>
