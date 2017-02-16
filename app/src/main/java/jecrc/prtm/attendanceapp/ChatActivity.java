@@ -15,6 +15,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +28,9 @@ public class ChatActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private RecyclerView recyclerView;
     private static final String FIREBASE_URL = "https://android-chat.firebaseio-demo.com";
+    private EditText editTextMsg;
+    private ImageButton sendMsg;
+    private List<Object> object;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,14 +39,9 @@ public class ChatActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         recyclerView = (RecyclerView) findViewById(R.id.rvChat);
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        editTextMsg = (EditText) findViewById(R.id.outgoingMsg);
+        sendMsg = (ImageButton) findViewById(R.id.button_send);
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -51,13 +52,23 @@ public class ChatActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new ChatRecyclerAdapter(getList()));
+        final ChatRecyclerAdapter adapter = new ChatRecyclerAdapter(getList());
+        recyclerView.setAdapter(adapter);
+        recyclerView.scrollToPosition(object.size()-1);
+        sendMsg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                object.add(new Tsent(editTextMsg.getText().toString()));
+                adapter.notifyItemInserted(object.size()-1);
+                recyclerView.smoothScrollToPosition(object.size()-1);
+            }
+        });
 
 
     }
 
     private List<Object> getList() {
-        List<Object> object = new ArrayList<>();
+        object = new ArrayList<>();
         object.add(new Treceived("I there how are you dajfkldsjfa fkadjflkadjflkadsjf aldkfjalkdsfj asdfjaksdlf"));
         object.add(new Tsent("I am fine how r u? akfjasdfja ksdlfjadl fja;ldkfjakdfjalkdfkjaklfjalfjlaksdf jalsd"));
         object.add(new Treceived("full of surprise"));
