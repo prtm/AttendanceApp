@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Relier</string>
+    <string name="app_name">Attendance App</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_login2">Sign in</string>
 
@@ -28,4 +28,110 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="message_send">Message Send</string>
+
+
+    <!--http://deron.meranda.us/data/census-dist-male-first.txt   /extracted using python-->
+    <string-array name="names">
+        <item>JAMES</item>
+        <item>JOHN</item>
+        <item>ROBERT</item>
+        <item>MICHAEL</item>
+        <item>WILLIAM</item>
+        <item>DAVID</item>
+        <item>RICHARD</item>
+        <item>CHARLES</item>
+        <item>JOSEPH</item>
+        <item>THOMAS</item>
+        <item>CHRISTOPHER</item>
+        <item>DANIEL</item>
+        <item>PAUL</item>
+        <item>MARK</item>
+        <item>DONALD</item>
+        <item>GEORGE</item>
+        <item>KENNETH</item>
+        <item>STEVEN</item>
+        <item>EDWARD</item>
+        <item>BRIAN</item>
+        <item>RONALD</item>
+        <item>ANTHONY</item>
+        <item>KEVIN</item>
+        <item>JASON</item>
+        <item>MATTHEW</item>
+        <item>GARY</item>
+        <item>TIMOTHY</item>
+        <item>JOSE</item>
+        <item>LARRY</item>
+        <item>JEFFREY</item>
+        <item>FRANK</item>
+        <item>SCOTT</item>
+        <item>ERIC</item>
+        <item>STEPHEN</item>
+        <item>ANDREW</item>
+        <item>RAYMOND</item>
+        <item>GREGORY</item>
+        <item>JOSHUA</item>
+        <item>JERRY</item>
+        <item>DENNIS</item>
+        <item>WALTER</item>
+        <item>PATRICK</item>
+        <item>PETER</item>
+        <item>HAROLD</item>
+        <item>DOUGLAS</item>
+        <item>HENRY</item>
+        <item>CARL</item>
+        <item>ARTHUR</item>
+        <item>RYAN</item>
+        <item>ROGER</item>
+        <item>JOE</item>
+        <item>JUAN</item>
+        <item>JACK</item>
+        <item>ALBERT</item>
+        <item>JONATHAN</item>
+        <item>JUSTIN</item>
+        <item>TERRY</item>
+        <item>GERALD</item>
+        <item>KEITH</item>
+        <item>SAMUEL</item>
+        <item>WILLIE</item>
+        <item>RALPH</item>
+        <item>LAWRENCE</item>
+        <item>NICHOLAS</item>
+        <item>ROY</item>
+        <item>BENJAMIN</item>
+        <item>BRUCE</item>
+        <item>BRANDON</item>
+        <item>ADAM</item>
+        <item>HARRY</item>
+        <item>FRED</item>
+        <item>WAYNE</item>
+        <item>BILLY</item>
+        <item>STEVE</item>
+        <item>LOUIS</item>
+        <item>JEREMY</item>
+        <item>AARON</item>
+        <item>RANDY</item>
+        <item>HOWARD</item>
+        <item>EUGENE</item>
+        <item>CARLOS</item>
+        <item>RUSSELL</item>
+        <item>BOBBY</item>
+        <item>VICTOR</item>
+        <item>MARTIN</item>
+        <item>ERNEST</item>
+        <item>PHILLIP</item>
+        <item>TODD</item>
+        <item>JESSE</item>
+        <item>CRAIG</item>
+        <item>ALAN</item>
+        <item>SHAWN</item>
+        <item>CLARENCE</item>
+        <item>SEAN</item>
+        <item>PHILIP</item>
+        <item>CHRIS</item>
+        <item>JOHNNY</item>
+        <item>EARL</item>
+        <item>JIMMY</item>
+        <item>ANTONIO</item>
+
+    </string-array>
 </resources>

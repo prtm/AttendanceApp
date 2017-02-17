@@ -14,20 +14,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SearchActivity extends AppCompatActivity {
-    private RecyclerView recyclerView;
     private SearchView searchView;
-    private List<String> list;
+    private String[] list;
+    private String[] list2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
-        list = new ArrayList<>();
         searchView = (SearchView) findViewById(R.id.searchView);
 
-        recyclerView = (RecyclerView) findViewById(R.id.rvSearch);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rvSearch);
+        list2 = getResources().getStringArray(R.array.names);
+        list=list2;
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        final RecyclerView.Adapter adapter=new RecyclerView.Adapter() {
+        final RecyclerView.Adapter adapter = new RecyclerView.Adapter() {
             @Override
             public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
                 return new SearchViewHolder(LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_1, parent, false));
@@ -37,12 +38,12 @@ public class SearchActivity extends AppCompatActivity {
             public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
 
                 TextView textView = (TextView) holder.itemView;
-                textView.setText(list.get(position));
+                textView.setText(list[position]);
             }
 
             @Override
             public int getItemCount() {
-                return list.size();
+                return list.length;
             }
         };
         recyclerView.setAdapter(adapter);
@@ -54,15 +55,32 @@ public class SearchActivity extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                
-                return false;
+                List<String> s=sortedlist(list2,newText);
+                String[] str=new String[s.size()];
+                for(int i=0;i<s.size();i++){
+                    str[i]=s.get(i);
+                }
+                list=str;
+                adapter.notifyDataSetChanged();
+                return true;
             }
         });
 
 
     }
 
-    class SearchViewHolder extends RecyclerView.ViewHolder {
+    private List<String> sortedlist(String[] list, String newText) {
+        List<String> str = new ArrayList<>();
+        for (String aList : list) {
+            String s = aList.toLowerCase();
+            if (s.contains(newText.toLowerCase())) {
+                str.add(s);
+            }
+        }
+        return str;
+    }
+
+    private class SearchViewHolder extends RecyclerView.ViewHolder {
 
         SearchViewHolder(View itemView) {
             super(itemView);
@@ -74,4 +92,5 @@ public class SearchActivity extends AppCompatActivity {
             });
         }
     }
+
 }

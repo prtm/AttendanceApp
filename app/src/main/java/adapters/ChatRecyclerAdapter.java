@@ -14,15 +14,11 @@ import jecrc.prtm.attendanceapp.R;
 import jecrc.prtm.attendanceapp.Treceived;
 import jecrc.prtm.attendanceapp.Tsent;
 
-/**
- * Created by ghost on 14/2/17.
- */
 
 public class ChatRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private List<Object> items;
-
     private final int received = 0, sent = 1;
+    private final List<Object> items;
 
     public ChatRecyclerAdapter(List<Object> items) {
         this.items = items;

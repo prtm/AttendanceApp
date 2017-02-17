@@ -18,7 +18,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme">
         <activity android:name=".DashBoard" />
-        <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".ClassView" />
         <activity android:name=".Att_start" />
         <activity android:name=".Att_pager" />
@@ -27,7 +33,7 @@
 
         <activity android:name=".SubjectView" />
         <activity android:name=".Att_view_sel" />
-        <activity android:name=".Test"></activity>
+        <activity android:name=".Test" />
         <activity
             android:name=".ChatActivity"
             android:label="@string/title_activity_chat"
@@ -50,7 +56,14 @@
             </intent-filter>
         </service>
 
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".SearchActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
     </application>
 
 </manifest>
