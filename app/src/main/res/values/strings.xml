@@ -134,4 +134,5 @@
         <item>ANTONIO</item>
 
     </string-array>
+    <string name="title_activity_home">Home</string>
 </resources>

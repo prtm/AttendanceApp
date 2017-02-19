@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         if (sharedPreferences.getBoolean("Active", false)) {
-            Intent intent = new Intent(LoginActivity.this, DashBoard.class);
+            Intent intent = new Intent(LoginActivity.this, Home.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         }
@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putBoolean("Active", true);
             editor.apply();
-            Intent intent = new Intent(LoginActivity.this, DashBoard.class);
+            Intent intent = new Intent(LoginActivity.this, Home.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             startActivity(intent);
         } else {
