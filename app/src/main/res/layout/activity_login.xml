@@ -42,7 +42,7 @@
         android:layout_alignBottom="@+id/header"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="-48dp"
-        android:background="@drawable/rounded_button"
+        android:background="@drawable/rb_red"
         android:src="@drawable/myvector"
         app:civ_border_color="#ffffff"
         app:civ_border_width="2dp" />

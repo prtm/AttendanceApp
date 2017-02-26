@@ -9,9 +9,9 @@ import android.view.View;
 
 import java.util.List;
 
-import adapters.Att_adapter;
+import adapters.AttAdapter;
 
-public class Att_start extends AppCompatActivity {
+public class AttOptionalActivity extends AppCompatActivity {
     public static List<DownloadStudent> listStudent;
     private String classId="", subId="";
     boolean majority=false;
@@ -29,14 +29,14 @@ public class Att_start extends AppCompatActivity {
         }
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_attendance);
-        Att_adapter attendanceAdapter = new Att_adapter(this, listStudent,majority);
+        AttAdapter attendanceAdapter = new AttAdapter(this, listStudent,majority);
         recyclerView.setAdapter(attendanceAdapter);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 3));
         FloatingActionButton fab= (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                L.tmlong(Att_start.this.getApplicationContext(),"Uploading attendance...");
+                L.tmlong(AttOptionalActivity.this.getApplicationContext(),"Uploading attendance...");
             }
         });
 

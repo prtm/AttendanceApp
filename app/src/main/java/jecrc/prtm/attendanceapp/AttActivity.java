@@ -16,10 +16,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import fragments.Att_view_Fragment;
+import fragments.AttVFragment;
 import interfaces.Att_status_change;
 
-public class Att_pager extends AppCompatActivity implements Att_status_change {
+public class AttActivity extends AppCompatActivity implements Att_status_change {
     public static int length = 0;
     private int position = 0;
     ViewPager vpPager;
@@ -33,7 +33,7 @@ public class Att_pager extends AppCompatActivity implements Att_status_change {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attendance_pager);
         try {
-            length = Att_view_Fragment.listStudent.size();
+            length = AttVFragment.listStudent.size();
             String classSubId[] = getIntent().getExtras().getString("classSubId").split(",");
             classId = classSubId[0];
             subId = classSubId[1];
@@ -48,7 +48,7 @@ public class Att_pager extends AppCompatActivity implements Att_status_change {
             @Override
             public void onClick(View v) {
                 //upload attendance
-                L.tm(Att_pager.this, "Uploading...");
+                L.tm(AttActivity.this, "Uploading...");
             }
         });
 
@@ -68,14 +68,14 @@ public class Att_pager extends AppCompatActivity implements Att_status_change {
                 } else {
                     fab.setVisibility(View.INVISIBLE);
                 }
-                Att_pager.this.position = position;
-                if (Att_pager.this.status[position]) {
+                AttActivity.this.position = position;
+                if (AttActivity.this.status[position]) {
                     L.lm("Present Called");
                     Imgstatus.setImageResource(R.drawable.check);
                     checkedStatus.setText(getResources().getString(R.string.present));
 
 
-                } else if (!Att_pager.this.status[Att_pager.this.position]) {
+                } else if (!AttActivity.this.status[AttActivity.this.position]) {
                     L.lm("Absent Called");
                     Imgstatus.setImageResource(R.drawable.cancel);
                     checkedStatus.setText(getResources().getString(R.string.absent));
@@ -133,7 +133,7 @@ public class Att_pager extends AppCompatActivity implements Att_status_change {
         status[position] = stat;
         final Animation animleftOut = AnimationUtils.loadAnimation(this, R.anim.translate_left);
         final Animation animationRightOut = AnimationUtils.loadAnimation(this, R.anim.translate_right);
-        final Animation fadein = AnimationUtils.loadAnimation(this, R.anim.fadein);
+        final Animation fadein = AnimationUtils.loadAnimation(this, R.anim.fade_in);
 
         if (stat) {
             checkedStatus.setAnimation(animationRightOut);
@@ -171,8 +171,8 @@ public class Att_pager extends AppCompatActivity implements Att_status_change {
         @Override
         public Fragment getItem(int position) {
             Bundle args = new Bundle();
-            Att_view_Fragment fragment = new Att_view_Fragment();
-            args.putInt(Att_view_Fragment.ARG_SECTION_NUMBER, position);
+            AttVFragment fragment = new AttVFragment();
+            args.putInt(AttVFragment.ARG_SECTION_NUMBER, position);
             fragment.setArguments(args);
             return fragment;
         }

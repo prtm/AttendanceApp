@@ -20,14 +20,14 @@ import jecrc.prtm.attendanceapp.R;
 /**
  * Created by Ghost on 25-Aug-16.
  */
-public class Att_adapter extends RecyclerView.Adapter<Att_adapter.MyAdapter> {
+public class AttAdapter extends RecyclerView.Adapter<AttAdapter.MyAdapter> {
     private List<DownloadStudent> ls = Collections.emptyList();
     private LayoutInflater inflater;
     private boolean check[];
     private static final float imageA = 0.4f;
     private static final float imageB = 1f;
 
-    public Att_adapter(Context context, List<DownloadStudent> ls, boolean majority) {
+    public AttAdapter(Context context, List<DownloadStudent> ls, boolean majority) {
         this.ls = ls;
         inflater = LayoutInflater.from(context);
         check = new boolean[ls.size()];

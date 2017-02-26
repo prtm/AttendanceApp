@@ -9,7 +9,7 @@ import java.util.List;
 
 import jecrc.prtm.attendanceapp.DownloadClass;
 
-public class JsonParser_Sub {
+public class JsonParserSub {
 
     public static List<DownloadClass> parseFeed(String content) {
         try {

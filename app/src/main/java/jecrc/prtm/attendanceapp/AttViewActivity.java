@@ -5,11 +5,10 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.ImageView;
 
 import com.amulyakhare.textdrawable.TextDrawable;
 
-public class Att_view_sel extends AppCompatActivity {
+public class AttViewActivity extends AppCompatActivity {
     private String classSubId = "";
 
     @Override
@@ -31,7 +30,7 @@ public class Att_view_sel extends AppCompatActivity {
         findViewById(R.id.equal).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Att_view_sel.this, Att_pager.class);
+                Intent intent = new Intent(AttViewActivity.this, AttActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("classSubId", classSubId);
                 intent.putExtras(bundle);
@@ -51,7 +50,7 @@ public class Att_view_sel extends AppCompatActivity {
     }
 
     private void att_start(boolean type) {
-        Intent intent = new Intent(Att_view_sel.this, Att_start.class);
+        Intent intent = new Intent(AttViewActivity.this, AttOptionalActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         Bundle bundle = new Bundle();
         bundle.putBoolean("majority", type);

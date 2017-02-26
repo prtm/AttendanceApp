@@ -18,21 +18,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme">
         <activity android:name=".LoginActivity">
+
+        </activity>
+        <activity android:name=".ClassView" />
+        <activity android:name=".AttOptionalActivity" />
+        <activity android:name=".AttActivity" />
+
+        <service android:name=".download_upload.DownloadService" />
+
+        <activity android:name=".SubjectView" />
+        <activity android:name=".AttViewActivity" />
+        <activity android:name=".Test" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ClassView" />
-        <activity android:name=".Att_start" />
-        <activity android:name=".Att_pager" />
-
-        <service android:name=".download_upload.DownloadService" />
-
-        <activity android:name=".SubjectView" />
-        <activity android:name=".Att_view_sel" />
-        <activity android:name=".Test" />
         <activity
             android:name=".ChatActivity"
             android:label="@string/title_activity_chat"

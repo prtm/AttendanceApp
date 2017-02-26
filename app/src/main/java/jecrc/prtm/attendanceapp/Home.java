@@ -25,7 +25,7 @@ import com.android.volley.error.VolleyError;
 import com.android.volley.request.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import parser.JsonParser_Class;
+import parser.JsonParserClass;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -48,7 +48,7 @@ public class Home extends AppCompatActivity
 //                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
 //                        .setAction("Action", null).show();
 
-//                startActivity(new Intent(Home.this, Att_pager.class));
+//                startActivity(new Intent(Home.this, AttActivity.class));
                 progressBar.setVisibility(View.VISIBLE);
                 requestVolley();
 
@@ -150,7 +150,7 @@ public class Home extends AppCompatActivity
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
                         } else {
-                            ClassView.downloadClasses = JsonParser_Class.parseFeed(response);
+                            ClassView.downloadClasses = JsonParserClass.parseFeed(response);
                             if (ClassView.downloadClasses == null) {
                                 L.lm("null error");
                                 success = false;

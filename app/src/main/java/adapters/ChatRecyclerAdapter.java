@@ -32,15 +32,15 @@ public class ChatRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         switch (viewType) {
             case sent:
-                View v1 = inflater.inflate(R.layout.custom_chatoutgoing, parent, false);
+                View v1 = inflater.inflate(R.layout.custom_chat_outgoing, parent, false);
                 viewHolder = new ViewHolderSent(v1);
                 break;
             case received:
-                View v2 = inflater.inflate(R.layout.custom_chatincoming, parent, false);
+                View v2 = inflater.inflate(R.layout.custom_chat_incoming, parent, false);
                 viewHolder = new ViewHolderReceive(v2);
                 break;
             default:
-                View v = inflater.inflate(R.layout.custom_chattime, parent, false);
+                View v = inflater.inflate(R.layout.custom_chat_time, parent, false);
                 viewHolder = new MyViewHolder(v);
                 break;
         }

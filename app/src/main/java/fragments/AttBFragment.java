@@ -11,10 +11,10 @@ import interfaces.Att_status_change;
 import jecrc.prtm.attendanceapp.R;
 
 
-public class Att_button_Fragment extends Fragment {
+public class AttBFragment extends Fragment {
     private Att_status_change comm;
 
-    public Att_button_Fragment() {
+    public AttBFragment() {
 
     }
 

@@ -12,13 +12,13 @@ import java.util.List;
 import jecrc.prtm.attendanceapp.DownloadStudent;
 import jecrc.prtm.attendanceapp.R;
 
-public class Att_view_Fragment extends Fragment {
+public class AttVFragment extends Fragment {
 
     public static final String ARG_SECTION_NUMBER = "sn";
     public static List<DownloadStudent> listStudent;
     private TextView checkedStatus;
 
-    public Att_view_Fragment() {
+    public AttVFragment() {
 
     }
 

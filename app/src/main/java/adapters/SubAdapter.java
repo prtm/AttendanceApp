@@ -15,40 +15,51 @@ import com.amulyakhare.textdrawable.util.ColorGenerator;
 import java.util.Collections;
 import java.util.List;
 
-import interfaces.Class_info;
+import interfaces.Sub_Info;
 import jecrc.prtm.attendanceapp.DownloadClass;
+import jecrc.prtm.attendanceapp.L;
 import jecrc.prtm.attendanceapp.R;
 
 /**
  * Created by Ghost on 25-Aug-16.
  */
-public class Class_adapter extends RecyclerView.Adapter<Class_adapter.MyAdapter> {
+public class SubAdapter extends RecyclerView.Adapter<SubAdapter.MyAdapter> {
     private List<DownloadClass> ls = Collections.emptyList();
     private LayoutInflater inflater;
     private ColorGenerator generator;
-    private Class_info subjectInformation;
+    private Sub_Info subjectInformation;
 
-    public Class_adapter(Context context, List<DownloadClass> ls) {
+    public SubAdapter(Context context, List<DownloadClass> ls) {
         this.ls = ls;
         this.inflater = LayoutInflater.from(context);
         generator = ColorGenerator.MATERIAL;
-        subjectInformation = (Class_info) context;
+        subjectInformation = (Sub_Info) context;
     }
 
     @Override
     public MyAdapter onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new MyAdapter(inflater.inflate(R.layout.custom_class, parent, false));
+        return new MyAdapter(inflater.inflate(R.layout.custom_subject, parent, false));
     }
 
     @Override
     public void onBindViewHolder(MyAdapter holder, int position) {
         int color = generator.getRandomColor();
         String s = ls.get(position).getName();
-        TextDrawable drawable = TextDrawable.builder()
-                .buildRound(s.substring(0, 1), color);
-        holder.ll.setBackgroundColor(color);
+        String x[] = s.split("\\s+");
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String aX : x) {
+            if (!aX.toLowerCase().equals("and")) {
+
+                stringBuilder.append(aX.substring(0, 1));
+            }
+        }
+        L.lm(stringBuilder.toString());
+        TextDrawable drawable = TextDrawable.builder().buildRect(stringBuilder.toString(), color);
+        holder.linearLayout.setBackgroundColor(color);
         holder.img.setImageDrawable(drawable);
         holder.textView.setText(s);
+
     }
 
     @Override
@@ -57,20 +68,21 @@ public class Class_adapter extends RecyclerView.Adapter<Class_adapter.MyAdapter>
     }
 
     public class MyAdapter extends RecyclerView.ViewHolder {
-        private TextView textView;
         private ImageView img;
-        private LinearLayout ll;
+        private TextView textView;
+        private LinearLayout linearLayout;
 
         public MyAdapter(final View itemView) {
             super(itemView);
-            textView = (TextView) itemView.findViewById(R.id.tv);
-            img = (ImageView) itemView.findViewById(R.id.image_view);
-            ll = (LinearLayout) itemView.findViewById(R.id.ll);
+            img = (ImageView) itemView.findViewById(R.id.circularSubject);
+            textView = (TextView) itemView.findViewById(R.id.Subject_name);
+            linearLayout = (LinearLayout) itemView.findViewById(R.id.lv_ll);
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    subjectInformation.onClicked(ls.get(getLayoutPosition()).getClassId());
+                    subjectInformation.itemClicked(ls.get(getLayoutPosition()).getClassId());
                 }
             });
         }

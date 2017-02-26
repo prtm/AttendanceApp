@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:orientation="horizontal"
-    tools:context="fragments.Att_button_Fragment">
+    tools:context="fragments.AttBFragment">
 
     <Button
         android:id="@+id/absent"
@@ -14,7 +14,7 @@
         android:layout_gravity="center"
         android:layout_margin="8dp"
         android:layout_weight="1"
-        android:background="@drawable/rounded_button"
+        android:background="@drawable/rb_red"
         android:gravity="center"
         android:text="Absent"
         android:textColor="@android:color/white" />
@@ -29,7 +29,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:layout_weight="1"
-        android:background="@drawable/rounded_button2"
+        android:background="@drawable/rb_teal"
         android:gravity="center"
         android:text="Present"
         android:textColor="@android:color/white" />

@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:padding="16dp"
-    tools:context="jecrc.prtm.attendanceapp.Att_view_sel">
+    tools:context="jecrc.prtm.attendanceapp.AttViewActivity">
 
     <LinearLayout
         android:id="@+id/lltextview"
@@ -59,14 +59,14 @@
             android:layout_weight="1"
             android:textColor="@android:color/white"
             android:text="Present"
-            android:background="@drawable/rounded_button2"
+            android:background="@drawable/rb_teal"
             android:onClick="selClick"
             android:padding="20dp" />
 
         <Button
             android:id="@+id/absent"
             android:layout_width="0dp"
-            android:background="@drawable/rounded_button"
+            android:background="@drawable/rb_red"
             android:text="Absent"
             android:textColor="@android:color/white"
             android:layout_height="wrap_content"
@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_marginTop="32dp"
-        android:background="@drawable/rounded_button3"
+        android:background="@drawable/rb_black"
         android:text="NEARBY EQUAL"
         android:textColor="@android:color/white" />
 

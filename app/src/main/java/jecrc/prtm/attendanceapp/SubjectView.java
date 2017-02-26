@@ -17,10 +17,10 @@ import com.android.volley.toolbox.Volley;
 
 import java.util.List;
 
-import adapters.Sub_adapter;
-import fragments.Att_view_Fragment;
+import adapters.SubAdapter;
+import fragments.AttVFragment;
 import interfaces.Sub_Info;
-import parser.JsonParser_Student;
+import parser.JsonParserStudent;
 
 public class SubjectView extends AppCompatActivity implements Sub_Info {
     private static final String url = "http://192.168.1.100/attend/api/list.php?type=students&class=";
@@ -34,7 +34,7 @@ public class SubjectView extends AppCompatActivity implements Sub_Info {
         setContentView(R.layout.activity_subject_view);
         classId = getIntent().getExtras().getString("classId");
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.rv_subject);
-        Sub_adapter adapter = new Sub_adapter(this, downloadSubjects);
+        SubAdapter adapter = new SubAdapter(this, downloadSubjects);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
     }
@@ -58,13 +58,13 @@ public class SubjectView extends AppCompatActivity implements Sub_Info {
                             startActivity(intent);
                         } else {
 
-                            Att_view_Fragment.listStudent = Att_start.listStudent = JsonParser_Student.parseFeed(response);
+                            AttVFragment.listStudent = AttOptionalActivity.listStudent = JsonParserStudent.parseFeed(response);
 
-                            if (Att_start.listStudent == null) {
+                            if (AttOptionalActivity.listStudent == null) {
                                 L.lm("null error");
                                 success = false;
                             } else {
-                                L.lm(Att_start.listStudent.size() + "");
+                                L.lm(AttOptionalActivity.listStudent.size() + "");
                                 success = true;
                             }
                         }
@@ -85,7 +85,7 @@ public class SubjectView extends AppCompatActivity implements Sub_Info {
 
     private void nextScreen(String subId) {
         if (success) {
-            Intent intent = new Intent(SubjectView.this, Att_view_sel.class);
+            Intent intent = new Intent(SubjectView.this, AttViewActivity.class);
             Bundle bundle = new Bundle();
             bundle.putString("classSubId", classId + "," + subId);
             intent.putExtras(bundle);
